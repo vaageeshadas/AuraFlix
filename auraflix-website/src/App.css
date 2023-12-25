@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  background-color: #f0f0f0; /* Light grey background */
+  color: #333; /* Dark grey text */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 50px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .App-logo {
@@ -13,15 +20,79 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-container {
+  font-family: 'Arial', sans-serif;
+  background-color: #1a1a1a; /* Dark background for contrast */
+  color: #ffffff; /* White text for readability */
+  height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+}
+
+.App-header {
+  text-align: center;
+  width: 100%;
+  padding-top: 2rem; /* Adjust the padding to set the space from the top */
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0; /* Remove margin for h1 to align title at the top */
+  margin-top: 1.5rem;
+}
+
+.Quiz-button {
+  background-color: #ffcc00; /* Yellow color */
+  color: #000000; /* Black text */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #000000; /* Black border for contrast */
+  margin: 2rem auto; /* Center button horizontally with margin */
+  display: block; /* Makes the button a block-level element to apply margin auto */
+  margin-top: 4.5rem; /* Increase the top margin to move the button down */
+  margin-bottom: 4rem;
+}
+
+.Quiz-button:hover {
+  background-color: #e6b800; /* Darker yellow on hover */
+}
+
+.Content {
+  text-align: center;
+  flex: 1; /* Takes up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  padding-bottom: 2rem;
+}
+
+.Top-movies {
+  max-width: 500px; /* Maximum content width */
+  margin: auto; /* Center section in the available content area */
+  margin-top: 2rem;
+}
+
+.Top-movies h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.Movie-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.Movie-item {
+  background-color: #333333; /* Dark grey background for items */
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
 }
 
 .App-link {

@@ -1,24 +1,53 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import QuizPage from './QuizPage'; // Import the QuizPage component
+
+function HomePage() {
+  const navigate = useNavigate();
+
+  // Dummy data for top movies
+  const topMovies = [
+    'Top Gun',
+    'Die Hard',
+    'TBSBS',
+    'Wish',
+    'ZMD'
+  ];
+
+  // Function for handling quiz button click
+  const handleTakeQuizClick = () => {
+    navigate('/quiz');
+  };
+
+  return (
+    <div className="App-container">
+      <header className="App-header">
+        <h1>AuraFlix</h1>
+      </header>
+      <div className="Content">
+        <button className="Quiz-button" onClick={handleTakeQuizClick}>Take Quiz</button>
+        <section className="Top-movies">
+          <h2>Top Movies</h2>
+          <ol className="Movie-list">
+            {topMovies.map((movie, index) => (
+              <li key={index} className="Movie-item">{movie}</li>
+            ))}
+          </ol>
+        </section>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          My name is Vaageesha, and I'm building AuraFlix
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
 
